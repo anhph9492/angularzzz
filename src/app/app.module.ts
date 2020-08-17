@@ -6,13 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TodoListLayoutModule } from './layouts/todo-list-layout/todo-list-layout.module';
+import { TodoListLayoutComponent } from './layouts/todo-list-layout/todo-list-layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RxjsLayoutComponent,
-    TodoListLayoutModule
+    TodoListLayoutComponent
   ],
   imports: [
     BrowserAnimationsModule,
