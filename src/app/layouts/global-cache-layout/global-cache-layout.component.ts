@@ -6,7 +6,12 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class GlobalCacheLayoutComponent implements OnInit {
-    constructor() { }
+    constructor() {
+        let hello = 'slkfsajdf';
+        let xx  = hello;
+        hello = 'fuck';
+        xx;
+     }
 
     ngOnInit(): void { }
 }
