@@ -17,7 +17,7 @@ const firebaseConfig = {
     // messagingSenderId: '1044881337458',
     // appId: '1:1044881337458:web:3cc3f6d2101bce1a6fa6eb',
     // measurementId: 'G-P6HRZWHB9V'
-  
+
     apiKey: 'AIzaSyCZ6Bhz-uPjI-WAdai4YJfBQLpWfwAI4B0',
     authDomain: 'qlmamnon.firebaseapp.com',
     databaseURL: 'https://qlmamnon.firebaseio.com',
@@ -47,7 +47,9 @@ const routes: Routes = [
         }),
     ],
     exports: [],
-    declarations: [GlobalCacheComponent],
+    declarations: [
+        GlobalCacheComponent
+    ],
     providers: [],
 })
 export class GlobalCacheLayoutModule { }
