@@ -4,7 +4,7 @@ import { DynamicScriptAndStyleLoaderService } from '../../services/dynamic-loade
 @Component({
     selector: 'app-rxjs-layout',
     templateUrl: 'rxjs-layout.component.html',
-    styleUrls:[
+    styleUrls: [
         'rxjs-layout.component.scss'
     ]
 })
