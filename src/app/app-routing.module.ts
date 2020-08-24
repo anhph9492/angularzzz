@@ -5,7 +5,18 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { TodoListLayoutComponent } from './layouts/todo-list-layout/todo-list-layout.component';
 import { GlobalCacheLayoutComponent } from './layouts/global-cache-layout/global-cache-layout.component';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 const routes: Routes = [
+  {
+    path: 'admin',
+    component: AdminLayoutComponent,
+    children: [
+      {
+        path: 'dashboards',
+        loadChildren: () => import('./pages/dashboards/dashboards.module').then(m => m.DashboardsModule)
+      }
+    ]
+  },
   {
     path: 'rx',
     component: RxjsLayoutComponent,
@@ -42,7 +53,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     BrowserModule,
-    RouterModule.forRoot(routes)],
+    RouterModule.forRoot(routes, { useHash: false })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

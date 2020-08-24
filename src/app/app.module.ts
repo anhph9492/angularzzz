@@ -9,22 +9,25 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TodoListLayoutComponent } from './layouts/todo-list-layout/todo-list-layout.component';
 import { GlobalCacheLayoutComponent } from './layouts/global-cache-layout/global-cache-layout.component';
 import { DestroyableComponent} from './utils/destroyable.component';
-
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { ComponentsModule } from './component/components.module';
 @NgModule({
   declarations: [
     AppComponent,
     RxjsLayoutComponent,
     TodoListLayoutComponent,
     GlobalCacheLayoutComponent,
-    DestroyableComponent
+    DestroyableComponent,
+    AdminLayoutComponent
   ],
   imports: [
+    RouterModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule,
     BrowserModule,
-    RouterModule,
-    AppRoutingModule
+    ReactiveFormsModule,
+    AppRoutingModule,
+    ComponentsModule
   ],
   providers: [],
   bootstrap: [
