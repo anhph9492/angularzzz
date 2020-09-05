@@ -6,14 +6,41 @@ import { BrowserModule } from '@angular/platform-browser';
 import { TodoListLayoutComponent } from './layouts/todo-list-layout/todo-list-layout.component';
 import { GlobalCacheLayoutComponent } from './layouts/global-cache-layout/global-cache-layout.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { AuthGuardService } from './services/auth.guard.service';
+import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'admin',
+    pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    redirectTo: 'auth/login',
+    pathMatch: 'full'
+  },
   {
     path: 'admin',
     component: AdminLayoutComponent,
+    canActivate: [AuthGuardService],
     children: [
       {
-        path: 'dashboards',
+        path: 'dashboard',
         loadChildren: () => import('./pages/dashboards/dashboards.module').then(m => m.DashboardsModule)
+      },
+      {
+        path: 'cache',
+        loadChildren: () => import('./pages/global-cache/global-cache.module').then(m => m.GlobalCacheModule)
+      }
+    ]
+  },
+  {
+    path: 'auth',
+    component: AuthLayoutComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./layouts/auth-layout/auth-layout.module').then(m => m.AuthLayoutModule)
       }
     ]
   },
@@ -38,14 +65,9 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'global-cache',
-    component: GlobalCacheLayoutComponent,
-    children: [
-      {
-        path: 'v1',
-        loadChildren: () => import('./layouts/global-cache-layout/global-cache-layout.module').then(m => m.GlobalCacheLayoutModule)
-      }
-    ]
+    path: '**',
+    redirectTo: '/login',
+    pathMatch: 'full'
   }
 ];
 

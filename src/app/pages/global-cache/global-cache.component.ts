@@ -1,13 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { CryptoService } from '../../utils/crypto.service';
-import { DestroyableComponent} from '../../utils/destroyable.component';
+import { AuthGuardService } from '../../services/auth.guard.service';
+import { Observable } from 'rxjs';
 @Component({
     selector: 'app-global-cache',
     templateUrl: 'global-cache.component.html'
+    , providers: [
+        AuthGuardService
+    ]
 })
 
-export class GlobalCacheComponent extends DestroyableComponent {
-    constructor(private crypto: CryptoService) {
-        super();
+export class GlobalCacheComponent implements OnInit {
+    auth: Observable<any>;
+    constructor(
+        private authService: AuthGuardService
+    ) {
+        let hello = 'slkfsajdf';
+        let xx = hello;
+        hello = 'fuck';
+        xx;
     }
+
+    ngOnInit(): void { }
 }

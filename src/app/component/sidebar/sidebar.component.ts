@@ -33,10 +33,16 @@ export interface ChildrenItems2 {
 // Menu Items
 export const ROUTES: RouteInfo[] = [
     {
-        path: '/dashboards',
+        path: '/admin/dashboard',
         title: 'Dashboard',
         type: 'link',
         icontype: 'ni-chart-bar-32 text-primary'
+    },
+    {
+        path: '/admin/cache',
+        title: 'Firebase',
+        type: 'link',
+        icontype: 'ni-app text-orange'
     },
     {
         path: '/order',

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ComponentsModule } from '../../component/components.module';
 import { Routes, RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { BsDropdownModule } from 'ngx-bootstrap';
 import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
@@ -12,22 +13,19 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 const routes: Routes = [
     {
         path: '',
-        children: [
-            {
-                path: '',
-                component: DashboardComponent
-            }
-        ]
+        component: DashboardComponent
     }
 ];
 
 @NgModule({
     imports: [
         CommonModule,
-        BsDropdownModule.forRoot(),
-        ProgressbarModule.forRoot(),
-        TooltipModule.forRoot(),
-        RouterModule.forChild(routes)
+        ReactiveFormsModule,
+        // BsDropdownModule.forRoot(),
+        // ProgressbarModule.forRoot(),
+        // TooltipModule.forRoot(),
+        RouterModule.forChild(routes),
+        ComponentsModule
     ],
     exports: [],
     declarations: [DashboardComponent],

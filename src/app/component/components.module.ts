@@ -10,7 +10,6 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 
 import { RouterModule } from '@angular/router';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
-// import { DxVectorMapModule } from 'devextreme-angular';
 import { BsDropdownModule } from 'ngx-bootstrap';
 
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -22,7 +21,6 @@ import {NavbarComponent} from './navbar/navbar.component';
         CommonModule,
         RouterModule,
         CollapseModule.forRoot(),
-        // DxVectorMapModule,
         PerfectScrollbarModule,
         BsDropdownModule.forRoot()
     ],
@@ -35,10 +33,10 @@ import {NavbarComponent} from './navbar/navbar.component';
         NavbarComponent
     ],
     providers: [
-        // {
-        //     provide: PERFECT_SCROLLBAR_CONFIG,
-        //     useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
-        // }
+        {
+            provide: PERFECT_SCROLLBAR_CONFIG,
+            useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+        }
     ],
 })
 export class ComponentsModule { }
