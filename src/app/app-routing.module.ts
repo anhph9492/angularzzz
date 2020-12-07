@@ -4,7 +4,10 @@ import {CommonModule} from '@angular/common';
 import {BrowserModule} from '@angular/platform-browser';
 
 const routes: Routes = [
-
+  {
+    path: 'encapsulation',
+    loadChildren: () => import('./pages/encapsulation/encapsulation.module').then(value => value.EncapsulationModule)
+  }
 ];
 
 @NgModule({
