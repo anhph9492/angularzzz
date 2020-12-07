@@ -1,20 +1,15 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
-import { RxjsLayoutComponent } from './layouts/rxjs-layout/rxjs-layout.component';
-import { AppRoutingModule } from './app-routing.module';
-import { RouterModule } from '@angular/router';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TodoListLayoutComponent } from './layouts/todo-list-layout/todo-list-layout.component';
-import { GlobalCacheLayoutComponent } from './layouts/global-cache-layout/global-cache-layout.component';
-import { DestroyableComponent } from './utils/destroyable.component';
-import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { ComponentsModule } from './component/components.module';
-import { StorageModule } from '@ngx-pwa/local-storage';
-import { HttpClientModule } from '@angular/common/http';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
-import { AngularFireModule } from '@angular/fire';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {AppComponent} from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+import {RouterModule} from '@angular/router';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {StorageModule} from '@ngx-pwa/local-storage';
+import {HttpClientModule} from '@angular/common/http';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
+import {AngularFireModule} from '@angular/fire';
+
 const firebaseConfig = {
   apiKey: 'AIzaSyBbot7j3dPF5hbfc2o5_qmjXS476oLlph8',
   authDomain: 'banded-hexagon-275008.firebaseapp.com',
@@ -37,11 +32,6 @@ const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    RxjsLayoutComponent,
-    TodoListLayoutComponent,
-    GlobalCacheLayoutComponent,
-    DestroyableComponent,
-    AdminLayoutComponent
   ],
   imports: [
     RouterModule,
@@ -50,8 +40,6 @@ const firebaseConfig = {
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    ComponentsModule,
-    HttpClientModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     StorageModule.forRoot({
